@@ -1,6 +1,6 @@
 # tic-tac-toe
 
-
+[Play Now] (https://clane62.github.io/tic-tac-toe/)
 
 ## About
 
