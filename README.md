@@ -1,6 +1,6 @@
 # tic-tac-toe
 
-[Play Now](file:///Users/caitlynlane/sei/projects/tic_tac_toe/tic-tac-toe/index.html)
+
 
 ## About
 
