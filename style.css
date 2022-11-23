@@ -19,6 +19,9 @@ div {
 .box {
     background-color: white;
 }
-.blue-box {
-    background-color: blue;
+.player-one {
+    background-color: rgb(193, 21, 251);
+}
+.player-two {
+    background-color: rgb(251, 21, 170);
 }
