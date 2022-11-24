@@ -45,12 +45,15 @@ Plan:
 - Everything is a pretty colour :) 
 
 ## Bugs to fix
-- at this stage the 'draw feature' is working, but it shows up a little on the first game. 
+- Initially I had a lot of issues with the 'draw feature'. Even after I got it working, it continued to show up after the first click of the first game. Eventually I worked out that the conditionals were not 100% right and I've fixed this. 
+- Whilst not a bug, I really would have preferred a smoother transition on the background image once it moves too high. In future I might look at having the background image be stagnant and have the clouds (as a seperate image moving) to avoid this. 
 
 ## Lessons learnt
 - start small, focus on the necessary things to fix. 
+- don't overcomplicate things. 
+- whilst planning, think about how all the features will work together. 
 - commit often!
 
 ## future features
-- I'd love to get the background moving! Like floating clouds. 
 - It would also be great to add sounds. 
+- it would also be great to have a player choose a colour to play as. 
