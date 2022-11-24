@@ -61,3 +61,6 @@ li {
 .playTwoOutput {
     margin-left: -2.5rem;
 }
+.winner {
+    background-color: black;
+}

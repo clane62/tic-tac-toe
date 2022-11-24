@@ -60,24 +60,41 @@ var drawYes = false
 
 function winner1() {
     document.querySelector('.playOneOutput').textContent = ('You won!')
-    clickedOnBox.style.background = 'black'
     win1 = true
     win2 = false
     drawYes = false
+    ticTacGrid[0].style.backgroundColor = 'purple'
+    ticTacGrid[1].style.backgroundColor = 'purple'
+    ticTacGrid[2].style.backgroundColor = 'purple'
+    ticTacGrid[3].style.backgroundColor = 'purple'
+    ticTacGrid[4].style.backgroundColor = 'purple'
+    ticTacGrid[5].style.backgroundColor = 'purple'
+    ticTacGrid[6].style.backgroundColor = 'purple'
+    ticTacGrid[7].style.backgroundColor = 'purple'
+    ticTacGrid[8].style.backgroundColor = 'purple'
 }
 
 function winner2() {
     document.querySelector('.playTwoOutput').textContent = ('You won!')
-    clickedOnBox.style.background = 'black'
     win1 = false
     win2 = true 
     drawYes = false
+    ticTacGrid[0].style.backgroundColor = 'pink'
+    ticTacGrid[1].style.backgroundColor = 'pink'
+    ticTacGrid[2].style.backgroundColor = 'pink'
+    ticTacGrid[3].style.backgroundColor = 'pink'
+    ticTacGrid[4].style.backgroundColor = 'pink'
+    ticTacGrid[5].style.backgroundColor = 'pink'
+    ticTacGrid[6].style.backgroundColor = 'pink'
+    ticTacGrid[7].style.backgroundColor = 'pink'
+    ticTacGrid[8].style.backgroundColor = 'pink'
 }
 
 function checkDraw() {
     if ((ticTacGrid[0].className !== 'box') && (ticTacGrid[1].className !== 'box') && (ticTacGrid[2].className !== 'box') && (ticTacGrid[3].className !== 'box') && (ticTacGrid[4].className !== 'box') && (ticTacGrid[5].className !== 'box') && (ticTacGrid[6].className !== 'box') && (ticTacGrid[7].className !== 'box') && (ticTacGrid[8].className !== 'box')) {
     document.querySelector('.playTwoOutput').textContent = "It's a draw! Play again"
     document.querySelector('.playOneOutput').textContent = "It's a draw! Play again"
+    drawYes = true
     }
  }
 
@@ -85,66 +102,82 @@ function checkDraw() {
 function playerWon() {
     if ((ticTacGrid[0].className === '.player-one') && (ticTacGrid[1].className === '.player-one') && (ticTacGrid[2].className === '.player-one')) {
         winner1()
+        
         console.log('winner one 012')
     }
     else if ((ticTacGrid[0].className === '.player-two') && (ticTacGrid[1].className === '.player-two') && (ticTacGrid[2].className === '.player-two')) {
         winner2()
+       
         console.log('winner two 012')
     } 
     else if ((ticTacGrid[3].className === '.player-one') && (ticTacGrid[4].className === '.player-one') && (ticTacGrid[5].className === '.player-one')) {
         winner1()
+        
         console.log('winner one 345')
     }
     else if ((ticTacGrid[3].className === '.player-two') && (ticTacGrid[4].className === '.player-two') && (ticTacGrid[5].className === '.player-two')) {
         winner2()
+        
         console.log('winner two 345')
     } 
     else if ((ticTacGrid[6].className === '.player-one') && (ticTacGrid[7].className === '.player-one') && (ticTacGrid[8].className === '.player-one')) {
         winner1()
+        
         console.log('winner one 678')
     }
     else if ((ticTacGrid[6].className === '.player-two') && (ticTacGrid[7].className === '.player-two') && (ticTacGrid[8].className === '.player-two')) {
         winner2()
+        
         console.log('winner two 678') 
     } 
     else if ((ticTacGrid[0].className === '.player-one') && (ticTacGrid[3].className === '.player-one') && (ticTacGrid[6].className === '.player-one')) {
         winner1()
+        
         console.log('winner one 036') 
     }
     else if ((ticTacGrid[0].className === '.player-two') && (ticTacGrid[3].className === '.player-two') && (ticTacGrid[6].className === '.player-two')) {
         winner2()
+        
         console.log('winner two 036') 
     } 
     else if ((ticTacGrid[1].className === '.player-one') && (ticTacGrid[4].className === '.player-one') && (ticTacGrid[7].className === '.player-one')) {
         winner1()
+        
         console.log('winner one 147') 
     }
     else if ((ticTacGrid[1].className === '.player-two') && (ticTacGrid[4].className === '.player-two') && (ticTacGrid[7].className === '.player-two')) {
         winner2()
+        
         console.log('winner two 147') 
     } 
     else if ((ticTacGrid[2].className === '.player-one') && (ticTacGrid[5].className === '.player-one') && (ticTacGrid[8].className === '.player-one')) {
         winner1()
+        
         console.log('winner one 258') 
     } 
     else if ((ticTacGrid[2].className === '.player-two') && (ticTacGrid[5].className === '.player-two') && (ticTacGrid[8].className === '.player-two')) {
         winner2()
+        
         console.log('winner two 258') 
     } 
     else if ((ticTacGrid[0].className === '.player-one') && (ticTacGrid[4].className === '.player-one') && (ticTacGrid[8].className === '.player-one')) {
         winner1()
+        
         console.log('winner one 048')
     }   
     else if ((ticTacGrid[0].className === '.player-two') && (ticTacGrid[4].className === '.player-two') && (ticTacGrid[8].className === '.player-two')) {
         winner2()
+        
         console.log('winner two 048')
     }
     else if ((ticTacGrid[2].className === '.player-one') && (ticTacGrid[4].className === '.player-one') && (ticTacGrid[6].className === '.player-one')) {
         winner1()
+        
         console.log('winner one 246')
     } 
     else if ((ticTacGrid[2].className === '.player-two') && (ticTacGrid[4].className === '.player-two') && (ticTacGrid[6].className === '.player-two')) {
         winner2()
+        
         console.log('winner two 246') 
     }
     else {
