@@ -3,7 +3,13 @@
     border: 1px solid red;
     
 }
-section {
+body {
+    display: grid;
+    text-align: center;
+    justify-content: center;
+}
+.tic-tac-toe {
+    text-align: center;
     max-width: 300px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -24,4 +30,34 @@ div {
 }
 .player-two {
     background-color: rgb(251, 21, 170);
+}
+.player-one-input {
+    display: flex;
+    text-align: left;
+    justify-content: space-around;
+    margin:0.5rem;
+
+}
+li {
+    list-style: none;
+    /* margin-left: -2.5rem; */
+}
+
+.player-two-input {
+    display: flex;
+    text-align: left;
+    justify-content: space-around;
+    margin:0.5rem;
+}
+/* h3 {
+    margin-block-start: 0rem;
+} */
+.winner {
+    background-color: green;
+}
+.playOneOutput {
+    margin-left: -2.5rem;
+}
+.playTwoOutput {
+    margin-left: -2.5rem;
 }
