@@ -7,17 +7,17 @@ ticTacGrid.forEach(function(clickBox) {
         
         let clickedOnBox = event.target
 
-        if ((playerOneTurn === false) && ((clickedOnBox.style.background === 'white') || (clickedOnBox.style.background === ''))) {
-            (clickedOnBox.style.background = 'pink') && (clickedOnBox.className = '.player-two')
+        if ((playerOneTurn === false) && ((clickedOnBox.className === '.box') || (clickedOnBox.style.background === '#D5D3DF') || (clickedOnBox.style.background === ''))) {
+            (clickedOnBox.style.background = '#FDAAFB') && (clickedOnBox.className = '.player-two')
             playerWon()
             playerOneTurn = true
 
-        } else if ((playerOneTurn === true) && ((clickedOnBox.style.background === 'white') || (clickedOnBox.style.background === ''))) {
-            (clickedOnBox.style.background = 'purple') && (clickedOnBox.className = '.player-one') 
+        } else if ((playerOneTurn === true) && ((clickedOnBox.className === '.box')|| (clickedOnBox.style.background === '#D5D3DF') || (clickedOnBox.style.background === ''))) {
+            (clickedOnBox.style.background = '#E3ACFA') && (clickedOnBox.className = '.player-one') 
                 playerWon()
                 playerOneTurn = false   
         
-        }  else if ((clickedOnBox.style.background === 'purple') || (clickedOnBox.style.background === 'pink')) {
+        }  else if ((clickedOnBox.style.background === '#E3ACFA') || (clickedOnBox.style.background === '#FDAAFB')) {
             console.log('Sorry that box is clicked, choose another')
         }
         })
@@ -25,6 +25,7 @@ ticTacGrid.forEach(function(clickBox) {
         
     })
 
+    //just the draw message showing as soon as the first button is clicked. Need to fix tomorrow morning. 
 
 var player1Input = document.querySelector('.item-name1')
 var player2Input = document.querySelector('.item-name2')
@@ -51,52 +52,97 @@ play2Button.addEventListener('click', function (event) {
 
 })
 
+var playAgainBtn = document.querySelector('.again-btn')
+
+playAgainBtn.addEventListener('click', function (event) {
+    let clickedOnAgain = event.target
+    event.preventDefault()
+    ticTacGrid[0].className = '.box'
+    ticTacGrid[1].className = '.box'
+    ticTacGrid[2].className = '.box'
+    ticTacGrid[3].className = '.box'
+    ticTacGrid[4].className = '.box'
+    ticTacGrid[5].className = '.box'
+    ticTacGrid[6].className = '.box'
+    ticTacGrid[7].className = '.box'
+    ticTacGrid[8].className = '.box'
+    ticTacGrid[0].style.backgroundColor = '#D5D3DF'
+    ticTacGrid[1].style.backgroundColor = '#D5D3DF'
+    ticTacGrid[2].style.backgroundColor = '#D5D3DF'
+    ticTacGrid[3].style.backgroundColor = '#D5D3DF'
+    ticTacGrid[4].style.backgroundColor = '#D5D3DF'
+    ticTacGrid[5].style.backgroundColor = '#D5D3DF'
+    ticTacGrid[6].style.backgroundColor = '#D5D3DF'
+    ticTacGrid[7].style.backgroundColor = '#D5D3DF'
+    ticTacGrid[8].style.backgroundColor = '#D5D3DF'
+    document.querySelector('.game-outcome').textContent = ""
+    playerOneTurn = true
+    drawYes = false
+  
+})
+
+
 
 var win1 = false
 var win2 = false
 var drawYes = false
 
+var scoreCount1 = 0
+var scoreCount2 = 0
 
 
 function winner1() {
-    document.querySelector('.playOneOutput').textContent = ('You won!')
+    document.querySelector('.game-outcome').textContent = ('Player 1 Wins!')
     win1 = true
     win2 = false
     drawYes = false
-    ticTacGrid[0].style.backgroundColor = 'purple'
-    ticTacGrid[1].style.backgroundColor = 'purple'
-    ticTacGrid[2].style.backgroundColor = 'purple'
-    ticTacGrid[3].style.backgroundColor = 'purple'
-    ticTacGrid[4].style.backgroundColor = 'purple'
-    ticTacGrid[5].style.backgroundColor = 'purple'
-    ticTacGrid[6].style.backgroundColor = 'purple'
-    ticTacGrid[7].style.backgroundColor = 'purple'
-    ticTacGrid[8].style.backgroundColor = 'purple'
+    ticTacGrid[0].style.backgroundColor = '#E3ACFA'
+    ticTacGrid[1].style.backgroundColor = '#E3ACFA'
+    ticTacGrid[2].style.backgroundColor = '#E3ACFA'
+    ticTacGrid[3].style.backgroundColor = '#E3ACFA'
+    ticTacGrid[4].style.backgroundColor = '#E3ACFA'
+    ticTacGrid[5].style.backgroundColor = '#E3ACFA'
+    ticTacGrid[6].style.backgroundColor = '#E3ACFA'
+    ticTacGrid[7].style.backgroundColor = '#E3ACFA'
+    ticTacGrid[8].style.backgroundColor = '#E3ACFA'
+    
+    scoreCount1 = scoreCount1 + 1
+    
+    if (scoreCount1 === 1) {
+        document.querySelector('.score-count-1').textContent = ('You won!') 
+    }
+    else {
+    document.querySelector('.score-count-1').textContent = ('Player 1 has ' + (scoreCount1) + ' wins')
+    }
+    win1 = false
 }
 
 function winner2() {
-    document.querySelector('.playTwoOutput').textContent = ('You won!')
+    document.querySelector('.game-outcome').textContent = ('Player 2 Wins!')
+    // document.querySelector('.playTwoOutput').textContent = ('Player 2 Wins')
     win1 = false
     win2 = true 
     drawYes = false
-    ticTacGrid[0].style.backgroundColor = 'pink'
-    ticTacGrid[1].style.backgroundColor = 'pink'
-    ticTacGrid[2].style.backgroundColor = 'pink'
-    ticTacGrid[3].style.backgroundColor = 'pink'
-    ticTacGrid[4].style.backgroundColor = 'pink'
-    ticTacGrid[5].style.backgroundColor = 'pink'
-    ticTacGrid[6].style.backgroundColor = 'pink'
-    ticTacGrid[7].style.backgroundColor = 'pink'
-    ticTacGrid[8].style.backgroundColor = 'pink'
-}
-
-function checkDraw() {
-    if ((ticTacGrid[0].className !== 'box') && (ticTacGrid[1].className !== 'box') && (ticTacGrid[2].className !== 'box') && (ticTacGrid[3].className !== 'box') && (ticTacGrid[4].className !== 'box') && (ticTacGrid[5].className !== 'box') && (ticTacGrid[6].className !== 'box') && (ticTacGrid[7].className !== 'box') && (ticTacGrid[8].className !== 'box')) {
-    document.querySelector('.playTwoOutput').textContent = "It's a draw! Play again"
-    document.querySelector('.playOneOutput').textContent = "It's a draw! Play again"
-    drawYes = true
+    ticTacGrid[0].style.backgroundColor = '#FDAAFB'
+    ticTacGrid[1].style.backgroundColor = '#FDAAFB'
+    ticTacGrid[2].style.backgroundColor = '#FDAAFB'
+    ticTacGrid[3].style.backgroundColor = '#FDAAFB'
+    ticTacGrid[4].style.backgroundColor = '#FDAAFB'
+    ticTacGrid[5].style.backgroundColor = '#FDAAFB'
+    ticTacGrid[6].style.backgroundColor = '#FDAAFB'
+    ticTacGrid[7].style.backgroundColor = '#FDAAFB'
+    ticTacGrid[8].style.backgroundColor = '#FDAAFB'
+   
+    scoreCount2 = scoreCount2 + 1
+    
+    if (scoreCount2 === 1) {
+        document.querySelector('.score-count-2').textContent = ('You won!') 
     }
- }
+    else {
+    document.querySelector('.score-count-2').textContent = ('Player 2 has ' + (scoreCount2) + ' wins')
+    }
+    win2 = false
+}
 
 
 function playerWon() {
@@ -107,82 +153,125 @@ function playerWon() {
     }
     else if ((ticTacGrid[0].className === '.player-two') && (ticTacGrid[1].className === '.player-two') && (ticTacGrid[2].className === '.player-two')) {
         winner2()
+        
        
         console.log('winner two 012')
     } 
     else if ((ticTacGrid[3].className === '.player-one') && (ticTacGrid[4].className === '.player-one') && (ticTacGrid[5].className === '.player-one')) {
         winner1()
         
+        
+        
         console.log('winner one 345')
     }
     else if ((ticTacGrid[3].className === '.player-two') && (ticTacGrid[4].className === '.player-two') && (ticTacGrid[5].className === '.player-two')) {
         winner2()
+        
         
         console.log('winner two 345')
     } 
     else if ((ticTacGrid[6].className === '.player-one') && (ticTacGrid[7].className === '.player-one') && (ticTacGrid[8].className === '.player-one')) {
         winner1()
         
+        
+        
         console.log('winner one 678')
     }
     else if ((ticTacGrid[6].className === '.player-two') && (ticTacGrid[7].className === '.player-two') && (ticTacGrid[8].className === '.player-two')) {
         winner2()
+        
         
         console.log('winner two 678') 
     } 
     else if ((ticTacGrid[0].className === '.player-one') && (ticTacGrid[3].className === '.player-one') && (ticTacGrid[6].className === '.player-one')) {
         winner1()
         
+        
+        
         console.log('winner one 036') 
     }
     else if ((ticTacGrid[0].className === '.player-two') && (ticTacGrid[3].className === '.player-two') && (ticTacGrid[6].className === '.player-two')) {
         winner2()
+        
         
         console.log('winner two 036') 
     } 
     else if ((ticTacGrid[1].className === '.player-one') && (ticTacGrid[4].className === '.player-one') && (ticTacGrid[7].className === '.player-one')) {
         winner1()
         
+        
+        
         console.log('winner one 147') 
     }
     else if ((ticTacGrid[1].className === '.player-two') && (ticTacGrid[4].className === '.player-two') && (ticTacGrid[7].className === '.player-two')) {
         winner2()
+        
         
         console.log('winner two 147') 
     } 
     else if ((ticTacGrid[2].className === '.player-one') && (ticTacGrid[5].className === '.player-one') && (ticTacGrid[8].className === '.player-one')) {
         winner1()
         
+        
+        
         console.log('winner one 258') 
     } 
     else if ((ticTacGrid[2].className === '.player-two') && (ticTacGrid[5].className === '.player-two') && (ticTacGrid[8].className === '.player-two')) {
         winner2()
+        
         
         console.log('winner two 258') 
     } 
     else if ((ticTacGrid[0].className === '.player-one') && (ticTacGrid[4].className === '.player-one') && (ticTacGrid[8].className === '.player-one')) {
         winner1()
         
+        
+        
         console.log('winner one 048')
     }   
     else if ((ticTacGrid[0].className === '.player-two') && (ticTacGrid[4].className === '.player-two') && (ticTacGrid[8].className === '.player-two')) {
         winner2()
+        
         
         console.log('winner two 048')
     }
     else if ((ticTacGrid[2].className === '.player-one') && (ticTacGrid[4].className === '.player-one') && (ticTacGrid[6].className === '.player-one')) {
         winner1()
         
+        
+        
         console.log('winner one 246')
     } 
     else if ((ticTacGrid[2].className === '.player-two') && (ticTacGrid[4].className === '.player-two') && (ticTacGrid[6].className === '.player-two')) {
         winner2()
         
+        
         console.log('winner two 246') 
     }
+    // else {
+    //     checkDraw1()
+    // }
     else {
         checkDraw()
+        
     }
 }
-   
+function checkDraw() {
+    if ((ticTacGrid[0].className !== '.box') && (ticTacGrid[1].className !== '.box') && (ticTacGrid[2].className !== '.box') && (ticTacGrid[3].className !== '.box') && (ticTacGrid[4].className !== '.box') && (ticTacGrid[5].className !== '.box') && (ticTacGrid[6].className !== '.box') && (ticTacGrid[7].className !== '.box') && (ticTacGrid[8].className !== '.box') && (win1 === false ) && (win2 === false)) {
+    ((drawYes = true) && (document.querySelector('.game-outcome').textContent = "It's a draw! Play again"))
+    }
+ }
 
+// function checkDraw1() {
+//     if 
+//     ((ticTacGrid[0].className === '.player-two') || (ticTacGrid[0].className === '.player-one')) && ((ticTacGrid[1].className === '.player-two') || (ticTacGrid[1].className === '.player-one')) 
+//     && ((ticTacGrid[2].className === '.player-two') || (ticTacGrid[2].className === '.player-one'))
+//     && ((ticTacGrid[3].className === '.player-two') || (ticTacGrid[3].className === '.player-one'))
+//     && ((ticTacGrid[4].className === '.player-two') || (ticTacGrid[4].className === '.player-one'))
+//     && ((ticTacGrid[5].className === '.player-two') || (ticTacGrid[5].className === '.player-one'))
+//     && ((ticTacGrid[6].className === '.player-two') || (ticTacGrid[6].className === '.player-one'))
+//     && ((ticTacGrid[7].className === '.player-two') || (ticTacGrid[7].className === '.player-one'))
+//     && ((ticTacGrid[8].className === '.player-two') || (ticTacGrid[8].className === '.player-one')) {
+//         ((drawYes = true) && (document.querySelector('.game-outcome').textContent = "It's a draw! Play again"))
+//     }
+// }

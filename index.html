@@ -6,33 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="../tic-tac-toe/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100&family=Josefin+Slab:wght@300&family=Sono:wght@300&display=swap" rel="stylesheet">
     
 </head>
 <body>
-    <h1>WHO WILL WIN?</h1>
 
-    <section class="player-one-input">
-        <form action="">
-            <button class="submit-btn1">player one:</button>
-            <input class="item-name1" type="text">
+    <section class="left-hand-column">
+
+        <h1>tic tac toe</h1>
+       
+        <section class="player-one-input">
+
+            <form action="">
+
+                <button class="submit-btn1">player one:</button>
+                <input class="item-name1" type="text">
+                  
+            </form>
+
+        </section>
+        <section class="name1">
+    
+            <ul class="playOneOutput">
+    
+            </ul>
+    
+        </section>
+        <section class="score-count-1">
+
+        </section> 
+
+        <section class="player-two-input">
+
+            <form action="">
+
+                <button class="submit-btn2">player two:</button>
+                <input class="item-name2" type="text">
+               
+                
+            </form>  
+        </section>
+        <section class="name2">
+    
+            <ul class="playTwoOutput">
+            </ul>
             
-        </form>
+        </section> 
+        <section class="score-count-2">
+
+        </section>
+
+        <section class="play-again">
+
+            <button class="again-btn">want to play again?</button>
+            <section class="game-outcome">
+
+            </section>
+
+        </section>
+    
     </section>
-    <section class="player-two-input">
-        <form action="">
-            <button class="submit-btn2">player two:</button>
-            <input class="item-name2" type="text">
-            
-        </form>
-    </section>
 
-    <section class="name1">
-
-        <ul class="playOneOutput">
-
-        </ul>
-
-    </section>
 
         <section class="tic-tac-toe">
 
@@ -50,12 +86,8 @@
         
         </section>
 
-    <section class="name2">
 
-    <ul class="playTwoOutput">
-    </ul>
-    
-    </section>
+
 
     <script src="../tic-tac-toe/javascript.js"></script>
 </body>

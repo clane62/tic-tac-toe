@@ -3,30 +3,73 @@
     border: 1px solid red;
     
 } */
+
+
 body {
     display: grid;
-    text-align: center;
-    justify-content: center;
+    text-align: left;    
+    grid-template-columns: 1fr 1fr;
+    justify-content:center;
+    padding: 30px;
+    padding-top: 50px;
+    max-width: fit-content;
+    max-height: 1000px;
+    background-image: url(../tic-tac-toe/images/background_clouds.png);
+
+    margin: 0 auto;
+    
+
+}
+h1 {
+    max-height: 80px;
+    margin:0.5rem;
+    font-family: 'Skranji' cursive;
+    font-size: 50pt;
+    color: white;
+    animation: fade1 8s infinite;
+
+
+
+}
+.left-hand-column {
+    display: grid;
+    justify-content:space-between;
+    grid-template-columns: 1fr;
+    text-align: left;
+    max-width: 350px;
+
+    
+    
+
+}
+input {
+    border-radius: 5px;
 }
 .tic-tac-toe {
-    text-align: center;
+    padding-left: 20px;
+    text-align: left;
     max-width: 300px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    
 }
 
 div {
-    border: 1px solid black;
-    background-color: white;
+    /* border: 1px solid black; */
+    background-color: #D5D3DF;
     padding: 5px;
     height: 100px;
     width: 100px;
+    border: 3px solid white;
+    border-radius: 5px;
+    margin: 0.2rem;
+
 }
 .box {
-    background-color: white;
+    /* background-color: white; */
 }
 .player-one {
-    background-color: rgb(193, 21, 251);
+    background-color: #E3ACFA;
 }
 .player-two {
     background-color: rgb(251, 21, 170);
@@ -34,20 +77,36 @@ div {
 .player-one-input {
     display: flex;
     text-align: left;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     margin:0.5rem;
+    max-height: 25px;
+    margin-top: 0rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 0.5rem;
 
 }
 li {
     list-style: none;
-    /* margin-left: -2.5rem; */
+    
+}
+.game-outcome {
+    /* padding-inline-start: 20px;
+    padding-left: -2.5rem; */
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.5rem;
+    padding-top: 0.5rem;
+    animation: fade2 5s;
 }
 
 .player-two-input {
     display: flex;
     text-align: left;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     margin:0.5rem;
+    max-height: 25px;
+    margin-top: 0rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 0.5rem;
 }
 /* h3 {
     margin-block-start: 0rem;
@@ -56,11 +115,60 @@ li {
     background-color: green;
 }
 .playOneOutput {
-    margin-left: -2.5rem;
+    margin-left: -2rem;
+    margin-top: 0rem;
+    font-family: Arial, Helvetica, sans-serif;
+    
 }
 .playTwoOutput {
-    margin-left: -2.5rem;
+    margin-left: -2rem;
+    margin-top: 0rem;
+    font-family: Arial, Helvetica, sans-serif;
+   
 }
 .winner {
     background-color: black;
+}
+.play-again {
+    margin:0.5rem;
+    text-align: center;
+
+}
+button {
+    background-color: #D5D3DF;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.score-count-2 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.score-count-1 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+@keyframes fade1 {
+    0% {
+        color: D5D3DF;
+    }
+    25% {
+        color: #E3ACFA;
+
+    }
+    50% {
+        color: D5D3DF;
+    }
+    75% {
+        color: #FDAAFB;
+    }
+    100% {
+        color: D5D3DF;
+    }
+}
+@keyframes fade2 {
+    0% {
+        color: white;
+    }
+    100% {
+        color: black;
+    }
 }
